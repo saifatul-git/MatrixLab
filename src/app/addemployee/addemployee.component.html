@@ -1,0 +1,102 @@
+  
+  
+  <!DOCTYPE html>
+  <html lang="en">
+  <head>
+      <meta charset="UTF-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <title>Document</title>
+  </head>
+  <body>
+    
+      <div class="container mt-3">
+        <div  class="alert alert-success alert-dismissible fade show" role="alert" *ngIf="alert">
+          <p class="text-center"><strong>Success!</strong>{{msg}}</p>
+          <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+          <div class="card">
+              <div class="card-title"><h4 class="text-center" >Please fill with your details</h4></div>
+              <div class="card-body">
+                <div class="row">
+                    <div class="col-sm-3">
+                         <div class="card">
+                           <img  class="card-img-top" [src]="imageUrl" style="height: 200px;">
+                         </div>
+                    </div>
+                     
+                    <div class="col-sm-8">
+                      
+                        <form [formGroup]="myForm" (ngSubmit)="subData()" multipart="form/data">
+                          <div class="form-group">
+                            <input name="firstname"   formControlName="first_name" placeholder="Full Name" class="form-control" type="text">
+                             <div *ngIf="myForm.get('first_name').invalid && (myForm.get('first_name').dirty||myForm.get('first_name').touched)" >
+                               <div *ngIf="myForm.get('first_name').errors.required">
+                                <span class="text-danger">Name is Required</span> 
+                               </div>
+                               <div *ngIf="myForm.get('first_name').errors.minlength">
+                                 <span class="text-danger">3 character Required</span> 
+                               </div>
+                               <div *ngIf="myForm.get('first_name').errors.maxlength">
+                                <span class="text-danger">Maximum 30 character Required</span> 
+                               </div>
+                              <div *ngIf="myForm.get('first_name').errors.pattern">
+                                <span class="text-danger">Alphabetical only</span>
+                              </div>
+                             
+                               
+                               
+                             </div>
+                            </div>
+      
+                            <div class="form-group">
+                              <input   name="lastname" formControlName="last_name" placeholder="Last Name" class="form-control" type="text">
+                              <div *ngIf="myForm.get('last_name').invalid && (myForm.get('last_name').dirty||myForm.get('last_name').touched)"  >
+
+                               <div *ngIf="myForm.get('last_name').errors.required">
+                                 <span class="text-danger">Last Name is Required</span>
+                               </div> 
+                               <div *ngIf="myForm.get('last_name').errors.minlength">
+                                 <span class="text-danger">Minimum 3 character is Required</span>
+                               </div>
+                               <div *ngIf="myForm.get('last_name').errors.maxlength">
+                                 <span class="text-danger">Maximum 30 character is Required</span>
+                               </div>
+                               <div *ngIf="myForm.get('last_name').errors.pattern">
+                                 <span class="text-danger">Alphabetical character only</span>
+                               </div>
+                              </div>
+                            </div>
+      
+                            <div class="form-group">
+                              <input   name="email" formControlName="email" placeholder="Email" class="form-control" type="text">
+                              <div *ngIf="myForm.get('email').invalid && (myForm.get('email').dirty||myForm.get('email').touched)"  >
+                                <div *ngIf="myForm.get('email').errors.required">
+                                  <span class="text-danger">Email is Required</span>
+                                </div>
+                                <div *ngIf="myForm.get('email').errors.email">
+                                  <span class="text-danger">Email should be in format</span>
+                                </div>
+                              </div>
+                            </div>
+                            <div class="form-group">
+                              <input (change)="picked($event,1,$event.target.files)" type="file">
+                              </div>
+                             
+                            <div class="form-group">
+                                <button type="submit" style="margin-right: 5px; background-color: #12bdf9;
+                                color: white;" class="btn " [disabled]="!myForm.valid" [ngStyle]="{'cursor': (!myForm.valid? 'not-allowed':'pointer')}">Add Employee</button>
+                                <!-- <button (click)="Cancel()"  class="btn btn-primary btn">Cancel</button> -->
+                            </div>
+                            
+                        </form>
+                    </div>
+                </div>
+              </div>
+          </div>
+        
+          
+      </div>
+  </body>
+  </html>

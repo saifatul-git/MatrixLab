@@ -1,0 +1,66 @@
+<div class="container">
+    <div class="card">
+        <div class="card-body">
+            <div class="row">
+                <blockquote class="blockquote mb-0 col-xs-12 col-sm-12 col-md-12 col-lg-12 ml-2" style="color: #8cddfc;"> 
+                    <div class="float-right"> Total no of
+                    <span class="text-warning">{{getdata.length}}</span>  Employee
+                </div>
+                  </blockquote>
+            </div>
+         
+          <!-- <div class="card-deck"> -->
+            <div class="card-group" >
+                <div class="row" style="display: contents;">
+                    <div class="card col-sm-3 col-md-3 col-lg-3" *ngFor="let data of getdata | paginate:{itemsPerPage:8,currentPage:p}">
+                        <div class="card-img-caption" style="text-align: center;">
+                            <img class="card-img-top" [src]="'data:image/jpg;base64,'+data.upload" style="height: 150px; overflow: hidden;" alt="Card image cap">
+                          </div>
+                        <div style="background-color: #0065d3; cursor: pointer; color: white; padding-block: 10px; text-align: center;" class="card-text"  (click)="details(data.id)">
+                            {{data.first_name}} {{data.last_name}}
+                        </div>
+                    </div>
+                </div> 
+            </div>
+          <!-- </div> -->
+          <div class="float-right">
+            <nav aria-label="Page navigation " style="margin-top: 1vw !important;">
+
+                <pagination-controls *ngIf="getdata.length>0" (pageChange)="p=$event">
+                </pagination-controls>
+        
+            </nav>
+          </div>
+          
+      </div>
+</div>
+ 
+<!-- <div class="text-center font-weight-bold" style="margin-left: 84vw; padding: 0.5vw; color: #8cddfc;">Total no of
+   <span class="text-warning">{{getdata.length}}</span>  Employee</div>
+
+<div class="container">
+    <div class="card-group">
+        <div class="row">
+            <div class="card col-xs-3 col-sm-3 col-md-3" style="width: 74vw;"
+                *ngFor="let data of getdata | paginate:{itemsPerPage:8,currentPage:p}">
+                <img class="card-img-top" [src]="'data:image/jpg;base64,'+data.upload" height="200" width="200" />
+                <div class="card-body">
+                    <div class="card-title">{{data.first_name}} {{data.last_name}}</div>
+                    <hr>
+                    <p class="card-text">
+                        <button (click)="details(data.id)" class="btn btn-primary btn-block">Details</button>
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+    <nav aria-label="Page navigation" style="margin-top: 1vw !important; margin-left: 39vw !important;">
+
+        <pagination-controls *ngIf="getdata.length>0" (pageChange)="p=$event">
+        </pagination-controls>
+
+    </nav>
+    
+  -->

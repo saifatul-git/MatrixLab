@@ -1,0 +1,19 @@
+.card-img-top {
+    border-top-left-radius: calc(0rem - 1px);
+    border-top-right-radius: calc(0rem - 1px);
+}
+.card {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    min-width: 0;
+    word-wrap: break-word;
+    background-color: #fff;
+    background-clip: border-box;
+    /* border: 2px solid rgb(16 94 172); */
+    margin-bottom: 30px;
+    
+}
+.mt-5, .my-5 {
+    margin-top: 0rem!important;
+}

@@ -1,0 +1,16 @@
+ 
+input[type='text']{
+    padding: 10px;
+    height:45px;
+}
+
+input[type='file']{
+    padding: 10px;
+    height:45px;
+}
+
+.btn{
+    width: 150px;
+    padding: 5px;
+    border-radius: 5px;
+}

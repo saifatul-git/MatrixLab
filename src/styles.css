@@ -1,0 +1,11 @@
+/* You can add global styles to this file, and also import other style files */
+.mt-3, .my-3 {
+    margin-top: 0rem!important;
+}
+.card {
+    
+    border-radius: 0 !important;
+    border-radius: 0 !important;
+    margin-inline: 0px;
+    margin-bottom: 30px;
+}

@@ -1,0 +1,7 @@
+.card-deck {
+    display: flex;
+    flex-flow: row wrap;
+    margin-right: -15px;
+    margin-left: 5px;
+    margin-top: 10px;
+}

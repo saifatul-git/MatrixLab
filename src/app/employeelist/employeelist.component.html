@@ -1,0 +1,41 @@
+ <div class="container mt-5">
+    <div class="card">
+        <div class="card-body">
+            <div class="row">
+         <div class="col-md-3">
+              <div class="card">
+                <img class="card-img-top" [src]="img" height="250"/>
+                  
+              </div>
+         </div>
+         <div class="col-md-9">
+            <table class="table table-striped">
+                <tr>
+                    <th>Id</th>
+                    <td>{{emprecord.id}}</td>
+                </tr>
+                   <tr>
+                    <th>First Name</th>
+                    <td>{{emprecord.first_name}}</td>
+                </tr>
+                <tr>
+                    <th>Last Name</th>
+                    <td>{{emprecord.last_name}}</td>
+                </tr>
+                <tr>
+                    <th>Email</th>
+                    <td>{{emprecord.email}}</td>
+                </tr>
+              </table>
+              
+         </div>
+         <button (click)="editRecord(emprecord.id)" class="btn mr-3" style="width: 140px;border-radius:10px; background-color: #12bdf9; color: white; margin-inline-start: 15px;">Update</button>
+      <button  (click)="deleteRecord(emprecord.id)" class="btn btn-warning" style="width: 140px; border-radius:10px;" >Remove</button>
+      <!-- <button (click)="Cancel()"  class="btn btn-primary btn" style="margin-left: 54vw; ">Cancel</button> -->
+            </div>
+        </div>
+     </div>
+ </div>
+ 
+
+     
